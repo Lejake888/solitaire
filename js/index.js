@@ -1,3 +1,15 @@
+// class Foundations {
+
+// }
+
+// class Tableau {
+
+// }
+
+// class Talon {
+
+// }
+
 class Card {
     constructor(suit, value) {
         this.visible = true;
@@ -68,4 +80,14 @@ let allCards = [
 ]
 
 let deck = shuffle(allCards)
-console.log(deck)
+for (i=0; i < deck.length; i++) {
+    console.log(deck[i])
+}
+coordinateCheck = () => {
+    let x = event.clientX;
+    let y = event.clientY;
+    let coords = "X coords: " + x + ", Y coords: " + y;
+    console.log(coords)
+}
+
+// document.getElementById("myBtn").addEventListener("click", function(){}
