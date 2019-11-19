@@ -1,5 +1,25 @@
 // Constants
 
+const stock = {
+    top: 30,
+    left: 30
+}
+
+const talon = {
+    top: 215,
+    left: 30
+}
+
+const foundation = {
+    top: 30,
+    // FOUNDATION_POSITION = (MARGIN + CARD_OFFSET * 3, MARGIN)
+}
+
+const tableaux = {
+    top: 30,
+    left: 300
+}
+
 // Classes 
 
 class Foundations {
@@ -43,7 +63,7 @@ class Tableaux {
 
 class Talon {
     constructor() {
-        this.position = 
+        this.position = []
     }
 }
 
