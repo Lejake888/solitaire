@@ -38,7 +38,14 @@ class Game {
     constructor() {
     this.visible = true;
     this.stock = [];
-    this.foundations = new Foundations();
+    this.foundations = [];
+    for (i = 0; i < 4; i++) {
+        this.foundations.push(new Foundations());
+    }
+    // this.tableaux = [];
+    // for (i = 0; i < 7; i++) {
+    //     this.tableaux.push(new Tableaux());
+    // }
     }
 }
 
