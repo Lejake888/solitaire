@@ -34,18 +34,39 @@ class Foundations {
     // }
 }
 
+class Tableaux {
+    constructor() {
+        this.image = '../images/empty_card.png';
+        this.cards = []
+    }
+}
+
+class Talon {
+    constructor() {
+        this.position = 
+    }
+}
+
+class Hand {
+    constructor() {
+        this.cards = []
+    }
+}
+
 class Game {
     constructor() {
-    this.visible = true;
-    this.stock = [];
-    this.foundations = [];
-    for (i = 0; i < 4; i++) {
-        this.foundations.push(new Foundations());
-    }
-    // this.tableaux = [];
-    // for (i = 0; i < 7; i++) {
-    //     this.tableaux.push(new Tableaux());
-    // }
+        this.visible = true;
+        this.stock = [];
+        this.foundations = [];
+        for (i = 0; i < 4; i++) {
+            this.foundations.push(new Foundations());
+        }
+        this.tableaux = [];
+        for (i = 0; i < 7; i++) {
+            this.tableaux.push(new Tableaux());
+        }
+        this.talon = new Talon()
+        this.hand = new Hand()
     }
 }
 
