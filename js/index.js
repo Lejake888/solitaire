@@ -74,15 +74,15 @@ class Hand {
 }
 
 class Game {
-    constructor() {
+    constructor(deck) {
         this.visible = true;
-        this.stock = [];
+        this.stock = deck;
         this.foundations = [];
-        for (i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
             this.foundations.push(new Foundations());
         }
         this.tableaux = [];
-        for (i = 0; i < 7; i++) {
+        for (let j = 0; j < 7; j++) {
             this.tableaux.push(new Tableaux());
         }
         this.talon = new Talon()
@@ -167,9 +167,7 @@ let allCards = [
 // shuffles all the cards
 
 let deck = shuffle(allCards)
-for (i=0; i < deck.length; i++) {
-    console.log(deck[i])
-}
+let game = new Game(deck)
 
 // gets coordinate of mouse click
 
@@ -180,5 +178,4 @@ for (i=0; i < deck.length; i++) {
 //     console.log(coords)
 // }
 
-let game = new Game()
 // game.setTableaux(deck)
