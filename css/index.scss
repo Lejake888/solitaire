@@ -5,16 +5,32 @@ h1 {
     text-align: center;
 }
 
+
 body {
     background-color: rgb(32, 140, 32);
 }
 
+img { 
+    width: 100px;
+    height: 150px;
+}
+
 .gameSpace {
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    display: block;
     width: 1000px;
     height: 85vh;
-    background-color: rgb(0, 205, 0);
     border: 5px solid black;
+
+    #topArea {
+        height: 25%;
+        background-color: rgb(0, 205, 0);
+    }
+    #mainArea {
+        height: 75%;
+        background-color: rgb(3, 180, 3);
+
+    }
 }

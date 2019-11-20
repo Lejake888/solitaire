@@ -7,13 +7,33 @@ body {
   background-color: #208c20;
 }
 
+img {
+  width: 100px;
+  height: 150px;
+}
+
 .gameSpace {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  display: block;
   width: 1000px;
   height: 85vh;
-  background-color: #00cd00;
   border: 5px solid black;
+}
+
+.gameSpace #topArea {
+  height: 25%;
+  background-color: #00cd00;
+}
+
+.gameSpace #mainArea {
+  height: 75%;
+  background-color: #03b403;
 }
 /*# sourceMappingURL=index.css.map */
