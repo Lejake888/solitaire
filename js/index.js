@@ -1,3 +1,5 @@
+const path = require('path')
+
 // Constants
 
 const stock = {
@@ -22,9 +24,13 @@ const tableaux = {
 
 // Classes 
 
+// class GameObjects {
+
+// }
+
 class Foundations {
     constructor() {
-        this.image = '../images/empty_card.png';
+        this.image = path.join(__dirname, '../images/empty_card.png');
         this.suit;
         this.cards = []
     }
@@ -56,7 +62,7 @@ class Foundations {
 
 class Tableaux {
     constructor() {
-        this.image = '../images/empty_card.png';
+        this.image = path.join(__dirname, '../images/empty_card.png');
         this.cards = []
     }
 }
@@ -97,6 +103,10 @@ class Card {
         this.suit = suit
         this.value = value
         this.color = color
+    }
+    loadImages() {
+        let images = path.join(__dirname, './images')
+        console.log(images)
     }
 }
 
