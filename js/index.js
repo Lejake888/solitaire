@@ -97,7 +97,6 @@ class Game {
     setupTableaux() {
         for (let i = 0; i < 7; i++) {
             this.tableaux[i].cards.push(this.stock[i])
-            this.stock.shift()
             }
         }
 }
@@ -182,8 +181,9 @@ let allCards = [
 
 // shuffles all the cards
 
-let deck = shuffle(allCards)
-let game = new Game(deck)
+// let deck = shuffle(allCards)
+// let game = new Game(deck)
+let game = new Game(allCards)
 game.setupTableaux()
 
 // gets coordinate of mouse click
