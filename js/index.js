@@ -80,9 +80,9 @@ class Hand {
 }
 
 class Game {
-    constructor(deck) {
+    constructor() {
         this.visible = true;
-        this.stock = deck;
+        this.stock = [];
         this.foundations = [];
         for (let i = 0; i < 4; i++) {
             this.foundations.push(new Foundations());
@@ -97,13 +97,14 @@ class Game {
     setupTableaux() {
         for (let i = 0; i < 7; i++) {
             for (let j = 0; j < i + 1; j++) {
-                this.tableaux[i].cards.push(this.stock[j])
+                let shifted = allCards.shift()
+                this.tableaux[i].cards.push(shifted) 
                 if (j != i) {
                     Card.flipped = true;
                 }
-                this.stock.shift()
             }
         }
+        this.stock = allCards
     }   
 }
 
@@ -185,11 +186,9 @@ let allCards = [
     new Card("diamonds", 13, "red", "../images/KD.png")
 ]
 
-// shuffles all the cards
-
-// let deck = shuffle(allCards)
-// let game = new Game(deck)
-let game = new Game(allCards)
+let deck = shuffle(allCards)
+let game = new Game(deck)
+let game = new Game()
 game.setupTableaux()
 
 // gets coordinate of mouse click
