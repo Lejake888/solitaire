@@ -96,12 +96,10 @@ class Game {
     }
     setupTableaux() {
         for (let i = 0; i < 7; i++) {
-            for (let j = 0; j < 7; j++) {
-            this.tableaux[i].cards.push(this.stock[j])
-            // console.log(this.tableaux[j].cards)
+            this.tableaux[i].cards.push(this.stock[i])
+            this.stock.shift()
             }
         }
-    }
 }
 
 class Card {
