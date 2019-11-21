@@ -95,8 +95,11 @@ class Game {
         this.hand = new Hand()
     }
     setupTableaux() {
-        for (let j = 0; j < 7; j++) {
-            this.tableaux[j].push(this.stock[0])
+        for (let i = 0; i < 7; i++) {
+            for (let j = 0; j < 7; j++) {
+            this.tableaux[i].cards.push(this.stock[j])
+            // console.log(this.tableaux[j].cards)
+            }
         }
     }
 }
