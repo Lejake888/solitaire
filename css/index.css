@@ -12,6 +12,10 @@ img {
   height: 150px;
 }
 
+#stock {
+  padding: 10px;
+}
+
 .gameSpace {
   display: -webkit-box;
   display: -ms-flexbox;

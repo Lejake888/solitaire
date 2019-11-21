@@ -94,6 +94,11 @@ class Game {
         this.talon = new Talon()
         this.hand = new Hand()
     }
+    setupTableaux() {
+        for (let j = 0; j < 7; j++) {
+            this.tableaux[j].push(this.stock[0])
+        }
+    }
 }
 
 class Card {
@@ -178,6 +183,7 @@ let allCards = [
 
 let deck = shuffle(allCards)
 let game = new Game(deck)
+game.setupTableaux()
 
 // gets coordinate of mouse click
 
