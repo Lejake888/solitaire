@@ -96,9 +96,15 @@ class Game {
     }
     setupTableaux() {
         for (let i = 0; i < 7; i++) {
-            this.tableaux[i].cards.push(this.stock[i])
+            for (let j = 0; j < i + 1; j++) {
+                this.tableaux[i].cards.push(this.stock[j])
+                if (j != i) {
+                    Card.flipped = true;
+                }
+                this.stock.shift()
             }
         }
+    }   
 }
 
 class Card {
