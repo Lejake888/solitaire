@@ -52,6 +52,8 @@ img {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .gameSpace img {
