@@ -69,7 +69,7 @@ class Tableaux {
 
 class Talon {
     constructor() {
-        this.position = []
+        this.cards = []
     }
 }
 
@@ -186,9 +186,10 @@ let allCards = [
     new Card("diamonds", 13, "red", "../images/KD.png")
 ]
 
+// shuffles all the cards
+
 let deck = shuffle(allCards)
 let game = new Game(deck)
-let game = new Game()
 game.setupTableaux()
 
 // gets coordinate of mouse click
@@ -201,3 +202,8 @@ game.setupTableaux()
 // }
 
 // game.setTableaux(deck)
+
+document.getElementById("stock").addEventListener("click", function() {
+    let drawnCard = game.stock.shift()
+    game.talon.cards.push(drawnCard)
+})

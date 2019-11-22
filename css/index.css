@@ -4,16 +4,12 @@ h1 {
 }
 
 body {
-  background-color: #208c20;
+  background-color: #1eff00;
 }
 
 img {
   width: 100px;
   height: 150px;
-}
-
-#stock {
-  padding: 10px;
 }
 
 .gameSpace {
