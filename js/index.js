@@ -99,8 +99,8 @@ class Game {
             for (let j = 0; j < i + 1; j++) {
                 let shifted = allCards.shift()
                 this.tableaux[i].cards.push(shifted) 
-                if (j != i) {
-                    Card.flipped = true;
+                if (j == i) {
+                    shifted.flipped = true;
                 }
             }
         }
@@ -206,4 +206,5 @@ game.setupTableaux()
 document.getElementById("stock").addEventListener("click", function() {
     let drawnCard = game.stock.shift()
     game.talon.cards.push(drawnCard)
+    
 })

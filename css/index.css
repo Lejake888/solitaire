@@ -25,15 +25,28 @@ img {
   width: 1000px;
   height: 85vh;
   border: 5px solid black;
+  padding: 10px;
 }
 
 .gameSpace #topArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 25%;
-  background-color: #00cd00;
+}
+
+.gameSpace #topArea #foundations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
 }
 
 .gameSpace #mainArea {
   height: 75%;
-  background-color: #03b403;
+}
+
+.gameSpace img {
+  padding: 5px;
 }
 /*# sourceMappingURL=index.css.map */
