@@ -37,7 +37,12 @@ img {
     }
     #mainArea {
         height: 75%;
-        // background-color: rgb(3, 180, 3);
+
+        #tableaux {
+            display: flex;
+            justify-content: space-around;
+            // justify-content: space-evenly;
+        }
     }
 
     img {
