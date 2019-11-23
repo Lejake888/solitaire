@@ -206,5 +206,4 @@ game.setupTableaux()
 document.getElementById("stock").addEventListener("click", function() {
     let drawnCard = game.stock.shift()
     game.talon.cards.push(drawnCard)
-    
 })

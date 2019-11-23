@@ -32,7 +32,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 25%;
+  height: auto;
 }
 
 .gameSpace #topArea #foundations {
@@ -43,7 +43,7 @@ img {
 }
 
 .gameSpace #mainArea {
-  height: 75%;
+  height: auto;
 }
 
 .gameSpace #mainArea #tableaux {

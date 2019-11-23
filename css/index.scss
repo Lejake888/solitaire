@@ -28,7 +28,7 @@ img {
 
     #topArea {
         display: flex;
-        height: 25%;
+        height: auto;
 
         #foundations {
             display: flex;
@@ -36,7 +36,7 @@ img {
         }
     }
     #mainArea {
-        height: 75%;
+        height: auto;
 
         #tableaux {
             display: flex;
