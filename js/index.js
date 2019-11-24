@@ -181,7 +181,7 @@ game.setupTableaux()
 // game.setTableaux(deck)
 
 document.getElementById("stock").addEventListener("click", function() {
-    if (!game.stock) {
+    if (game.stock.length == 0) {
         for(let i = 0; i < game.talon.length; i++) {
             game.stock.push(game.talon)
         }
@@ -191,4 +191,7 @@ document.getElementById("stock").addEventListener("click", function() {
     console.log(drawnCard)
     game.talon.cards.push(drawnCard)
     document.getElementById("talonImage").src = `images/${drawnCard.value}${drawnCard.suit}.png`
+    if (game.stock.length == 0) {
+        document.getElementById("stockImage").src = `images/empty_card.png`
+    }
 })
