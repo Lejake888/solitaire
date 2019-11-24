@@ -1,27 +1,5 @@
 // const path = require('./path')
 
-// Constants
-
-const stock = {
-    top: 30,
-    left: 30
-}
-
-const talon = {
-    top: 215,
-    left: 30
-}
-
-const foundation = {
-    top: 30,
-    // FOUNDATION_POSITION = (MARGIN + CARD_OFFSET * 3, MARGIN)
-}
-
-const tableaux = {
-    top: 30,
-    left: 300
-}
-
 // Classes 
 
 // class GameObjects {
@@ -132,60 +110,59 @@ const shuffle = (array) =>  {
 // Card generation
 
 let allCards = [
-    new Card("spades", 1, "black", "../images/AS.png"),
-    new Card("spades", 2, "black", "../images/2S.png"),
-    new Card("spades", 3, "black", "../images/3S.png"),
-    new Card("spades", 4, "black", "../images/4S.png"),
-    new Card("spades", 5, "black", "../images/5S.png"),
-    new Card("spades", 6, "black", "../images/6S.png"),
-    new Card("spades", 7, "black", "../images/7S.png"),
-    new Card("spades", 8, "black", "../images/8S.png"),
-    new Card("spades", 9, "black", "../images/9S.png"),
-    new Card("spades", 10, "black", "../images/10S.png"),
-    new Card("spades", 11, "black", "../images/JS.png"),
-    new Card("spades", 12, "black", "../images/QS.png"),
-    new Card("spades", 13, "black", "../images/KS.png"),
-    new Card("hearts", 1, "red", "../images/AH.png"),
-    new Card("hearts", 2, "red", "../images/2H.png"),
-    new Card("hearts", 3, "red", "../images/3H.png"),
-    new Card("hearts", 4, "red", "../images/4H.png"),
-    new Card("hearts", 5, "red", "../images/5H.png"),
-    new Card("hearts", 6, "red", "../images/6H.png"),
-    new Card("hearts", 7, "red", "../images/7H.png"),
-    new Card("hearts", 8, "red", "../images/8H.png"),
-    new Card("hearts", 9, "red", "../images/9H.png"),
-    new Card("hearts", 10, "red", "../images/10H.png"),
-    new Card("hearts", 11, "red", "../images/JH.png"),
-    new Card("hearts", 12, "red", "../images/QH.png"),
-    new Card("hearts", 13, "red", "../images/KH.png"),
-    new Card("clubs", 1, "black", "../images/AC.png"),
-    new Card("clubs", 2, "black", "../images/2C.png"),
-    new Card("clubs", 3, "black", "../images/3C.png"),
-    new Card("clubs", 4, "black", "../images/4C.png"),
-    new Card("clubs", 5, "black", "../images/5C.png"),
-    new Card("clubs", 6, "black", "../images/6C.png"),
-    new Card("clubs", 7, "black", "../images/7C.png"),
-    new Card("clubs", 8, "black", "../images/8C.png"),
-    new Card("clubs", 9, "black", "../images/9C.png"),
-    new Card("clubs", 10, "black", "../images/10C.png"),
-    new Card("clubs", 11, "black", "../images/JC.png"),
-    new Card("clubs", 12, "black", "../images/QC.png"),
-    new Card("clubs", 13, "black", "../images/KC.png"),
-    new Card("diamonds", 1, "red", "../images/AD.png"),
-    new Card("diamonds", 2, "red", "../images/2D.png"),
-    new Card("diamonds", 3, "red", "../images/3D.png"),
-    new Card("diamonds", 4, "red", "../images/4D.png"),
-    new Card("diamonds", 5, "red", "../images/5D.png"),
-    new Card("diamonds", 6, "red", "../images/6D.png"),
-    new Card("diamonds", 7, "red", "../images/7D.png"),
-    new Card("diamonds", 8, "red", "../images/8D.png"),
-    new Card("diamonds", 9, "red", "../images/9D.png"),
-    new Card("diamonds", 10, "red", "../images/10D.png"),
-    new Card("diamonds", 11, "red", "../images/JD.png"),
-    new Card("diamonds", 12, "red", "../images/QD.png"),
-    new Card("diamonds", 13, "red", "../images/KD.png")
+    new Card("S", "A", "black", "../images/AS.png"),
+    new Card("S", 2, "black", "../images/2S.png"),
+    new Card("S", 3, "black", "../images/3S.png"),
+    new Card("S", 4, "black", "../images/4S.png"),
+    new Card("S", 5, "black", "../images/5S.png"),
+    new Card("S", 6, "black", "../images/6S.png"),
+    new Card("S", 7, "black", "../images/7S.png"),
+    new Card("S", 8, "black", "../images/8S.png"),
+    new Card("S", 9, "black", "../images/9S.png"),
+    new Card("S", 10, "black", "../images/10S.png"),
+    new Card("S", "J", "black", "../images/JS.png"),
+    new Card("S", "Q", "black", "../images/QS.png"),
+    new Card("S", "K", "black", "../images/KS.png"),
+    new Card("H", "A", "red", "../images/AH.png"),
+    new Card("H", 2, "red", "../images/2H.png"),
+    new Card("H", 3, "red", "../images/3H.png"),
+    new Card("H", 4, "red", "../images/4H.png"),
+    new Card("H", 5, "red", "../images/5H.png"),
+    new Card("H", 6, "red", "../images/6H.png"),
+    new Card("H", 7, "red", "../images/7H.png"),
+    new Card("H", 8, "red", "../images/8H.png"),
+    new Card("H", 9, "red", "../images/9H.png"),
+    new Card("H", 10, "red", "../images/10H.png"),
+    new Card("H", "J", "red", "../images/JH.png"),
+    new Card("H", "Q", "red", "../images/QH.png"),
+    new Card("H", "K", "red", "../images/KH.png"),
+    new Card("C", "A", "black", "../images/AC.png"),
+    new Card("C", 2, "black", "../images/2C.png"),
+    new Card("C", 3, "black", "../images/3C.png"),
+    new Card("C", 4, "black", "../images/4C.png"),
+    new Card("C", 5, "black", "../images/5C.png"),
+    new Card("C", 6, "black", "../images/6C.png"),
+    new Card("C", 7, "black", "../images/7C.png"),
+    new Card("C", 8, "black", "../images/8C.png"),
+    new Card("C", 9, "black", "../images/9C.png"),
+    new Card("C", 10, "black", "../images/10C.png"),
+    new Card("C", "J", "black", "../images/JC.png"),
+    new Card("C", "Q", "black", "../images/QC.png"),
+    new Card("C", "K", "black", "../images/KC.png"),
+    new Card("D", "A", "red", "../images/AD.png"),
+    new Card("D", 2, "red", "../images/2D.png"),
+    new Card("D", 3, "red", "../images/3D.png"),
+    new Card("D", 4, "red", "../images/4D.png"),
+    new Card("D", 5, "red", "../images/5D.png"),
+    new Card("D", 6, "red", "../images/6D.png"),
+    new Card("D", 7, "red", "../images/7D.png"),
+    new Card("D", 8, "red", "../images/8D.png"),
+    new Card("D", 9, "red", "../images/9D.png"),
+    new Card("D", 10, "red", "../images/A0D.png"),
+    new Card("D", "J", "red", "../images/JD.png"),
+    new Card("D", "Q", "red", "../images/QD.png"),
+    new Card("D", "K", "red", "../images/KD.png")
 ]
-
 // shuffles all the cards
 
 let deck = shuffle(allCards)
@@ -204,6 +181,14 @@ game.setupTableaux()
 // game.setTableaux(deck)
 
 document.getElementById("stock").addEventListener("click", function() {
+    if (!game.stock) {
+        for(let i = 0; i < game.talon.length; i++) {
+            game.stock.push(game.talon)
+        }
+        game.talon = []
+    }
     let drawnCard = game.stock.shift()
+    console.log(drawnCard)
     game.talon.cards.push(drawnCard)
+    document.getElementById("talonImage").src = `images/${drawnCard.value}${drawnCard.suit}.png`
 })
