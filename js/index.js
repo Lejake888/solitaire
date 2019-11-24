@@ -194,3 +194,16 @@ document.getElementById("stock").addEventListener("click", function() {
         document.getElementById("stockImage").src = `images/empty_card.png`
     }
 })
+
+window.onload = function() {
+    // for (let i = 0; i < 7; i++) {
+    //     document.getElementById(`tableau${i}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
+    // }
+    
+    // if(!game.tableaux[0].cards[0].flipped){
+    //     document.getElementById("image").src = 'images/card_back.png'
+    // }
+    // else{
+    //     document.getElementById(`tableau${i}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
+    // }
+  };     
