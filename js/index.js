@@ -191,13 +191,19 @@ document.getElementById("stock").addEventListener("click", function() {
     game.talon.cards.push(drawnCard)
     document.getElementById("talonImage").src = `images/${drawnCard.value}${drawnCard.suit}.png`
     if (game.stock.length == 0) {
-        document.getElementById("stockImage").src = `images/empty_card.png`
+        document.getElementById("stockImage").src = `images/circle.png`
     }
 })
 
 window.onload = function() {
+    // const tableaux = document.querySelectorAll('tableauxImages');
+
+    // tableaux.forEach(a => {
+    // tableaux[a].src = `images/${game.tableaux[a].cards[a].value}${game.tableaux[a].cards[a].suit}.png`;
+    // });
+        
     // for (let i = 0; i < 7; i++) {
-    //     document.getElementById(`tableau${i}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
+    //     document.getElementById("tableau1Image").src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
     // }
     
     // if(!game.tableaux[0].cards[0].flipped){
@@ -206,4 +212,7 @@ window.onload = function() {
     // else{
     //     document.getElementById(`tableau${i}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
     // }
+
+    document.getElementById("tableau1Image").src = `images/${game.tableaux[0].cards[0].value}${game.tableaux[0].cards[0].suit}.png`
+
   };     
