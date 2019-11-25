@@ -120,25 +120,9 @@ const shuffle = (array) =>  {
 }
 
 const generateGame = () => {
-    // const tableaux = document.querySelectorAll('tableauxImages');
-
-    // tableaux.forEach(a => {
-    // tableaux[a].src = `images/${game.tableaux[a].cards[a].value}${game.tableaux[a].cards[a].suit}.png`;
-    // });
-        
-    // for (let i = 0; i < 7; i++) {
-    //     document.getElementById("tableau1Image").src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
-    // }
-    
-    // if(!game.tableaux[0].cards[0].flipped){
-    //     document.getElementById("image").src = 'images/card_back.png'
-    // }
-    // else{
-    //     document.getElementById(`tableau${i}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
-    // }
-
-    document.getElementById("tableau1Image").src = `images/${game.tableaux[0].cards[0].value}${game.tableaux[0].cards[0].suit}.png`
-    console.log()
+    for (let i = 0; i < 7; i++) {
+        document.getElementById(`tableau${i+1}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
+    }
 }
 
 // Card generation
