@@ -101,9 +101,43 @@ class Card {
 
 // Functions outside of classes
 
+const resetStock = () => {
+    if (!game.stock.length) {
+        // for(let i = 0; i < game.talon.length; i++) {
+        //     game.stock.push(game.talon)
+        // }
+        // game.talon = []
+        console.log("Hello")
+        game.stock = game.talon.cards
+        game.talon = [] 
+    }
+}
+
 const shuffle = (array) =>  {
     array.sort(() => Math.random()-0.5);
     return array 
+}
+
+const generateGame = () => {
+    // const tableaux = document.querySelectorAll('tableauxImages');
+
+    // tableaux.forEach(a => {
+    // tableaux[a].src = `images/${game.tableaux[a].cards[a].value}${game.tableaux[a].cards[a].suit}.png`;
+    // });
+        
+    // for (let i = 0; i < 7; i++) {
+    //     document.getElementById("tableau1Image").src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
+    // }
+    
+    // if(!game.tableaux[0].cards[0].flipped){
+    //     document.getElementById("image").src = 'images/card_back.png'
+    // }
+    // else{
+    //     document.getElementById(`tableau${i}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
+    // }
+
+    document.getElementById("tableau1Image").src = `images/${game.tableaux[0].cards[0].value}${game.tableaux[0].cards[0].suit}.png`
+    console.log()
 }
 
 // Card generation
@@ -180,12 +214,7 @@ game.setupTableaux()
 // game.setTableaux(deck)
 
 document.getElementById("stock").addEventListener("click", function() {
-    if (game.stock.length == 0) {
-        for(let i = 0; i < game.talon.length; i++) {
-            game.stock.push(game.talon)
-        }
-        game.talon = []
-    }
+    resetStock()
     let drawnCard = game.stock.shift()
     console.log(drawnCard)
     game.talon.cards.push(drawnCard)
@@ -196,23 +225,5 @@ document.getElementById("stock").addEventListener("click", function() {
 })
 
 window.onload = function() {
-    // const tableaux = document.querySelectorAll('tableauxImages');
-
-    // tableaux.forEach(a => {
-    // tableaux[a].src = `images/${game.tableaux[a].cards[a].value}${game.tableaux[a].cards[a].suit}.png`;
-    // });
-        
-    // for (let i = 0; i < 7; i++) {
-    //     document.getElementById("tableau1Image").src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
-    // }
-    
-    // if(!game.tableaux[0].cards[0].flipped){
-    //     document.getElementById("image").src = 'images/card_back.png'
-    // }
-    // else{
-    //     document.getElementById(`tableau${i}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
-    // }
-
-    document.getElementById("tableau1Image").src = `images/${game.tableaux[0].cards[0].value}${game.tableaux[0].cards[0].suit}.png`
-
+    generateGame()
   };     
