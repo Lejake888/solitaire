@@ -120,9 +120,14 @@ const shuffle = (array) =>  {
 }
 
 const generateGame = () => {
+
     for (let i = 0; i < 7; i++) {
         document.getElementById(`tableau${i+1}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
     }
+    let testDiv = document.getElementById("tableaux")
+    console.log(testDiv.offsetTop)
+    testDiv.offsetTop = testDiv.offsetTop + 1000;
+    console.log(testDiv.offsetTop)
 }
 
 // Card generation
