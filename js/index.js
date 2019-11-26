@@ -110,6 +110,7 @@ const resetStock = () => {
         document.getElementById("stockImage").src = `images/circle.png`
         console.log("Hello")
         game.stock = game.talon.cards
+        // set cards back to flipped = false
         game.talon = [] 
     }
 }
@@ -120,14 +121,18 @@ const shuffle = (array) =>  {
 }
 
 const generateGame = () => {
-
     for (let i = 0; i < 7; i++) {
+        for (let j = 0; j < i+1; j++) {
+            if (game.tableaux[i].cards[j].flipped === "false") {
+                console.log("not turned")
+            }
+        }
         document.getElementById(`tableau${i+1}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
     }
-    let testDiv = document.getElementById("tableaux")
-    console.log(testDiv.offsetTop)
-    testDiv.offsetTop = testDiv.offsetTop + 1000;
-    console.log(testDiv.offsetTop)
+    // let testDiv = document.getElementById("tableaux")
+    // console.log(testDiv.offsetTop)
+    // testDiv.offsetTop = testDiv.offsetTop + 1000;
+    // console.log(testDiv.offsetTop)
 }
 
 // Card generation
@@ -206,6 +211,7 @@ game.setupTableaux()
 document.getElementById("stock").addEventListener("click", function() {
     resetStock()
     let drawnCard = game.stock.shift()
+    drawnCard.flipped = true
     console.log(drawnCard)
     game.talon.cards.push(drawnCard)
     document.getElementById("talonImage").src = `images/${drawnCard.value}${drawnCard.suit}.png`
@@ -214,3 +220,6 @@ document.getElementById("stock").addEventListener("click", function() {
 window.onload = function() {
     generateGame()
   };     
+
+  // Last item in array should be visible (true)
+  // Others should be flipped over (false)
