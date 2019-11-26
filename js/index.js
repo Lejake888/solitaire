@@ -94,9 +94,9 @@ class Card {
         this.value = value
         this.color = color
     }
-    loadImages() {
-        console.log(images)
-    }
+    // loadImages() {
+    //     console.log(images)
+    // }
 }
 
 // Functions outside of classes
@@ -107,6 +107,7 @@ const resetStock = () => {
         //     game.stock.push(game.talon)
         // }
         // game.talon = []
+        console.log()
         document.getElementById("stockImage").src = `images/circle.png`
         console.log("Hello")
         game.stock = game.talon.cards
@@ -114,6 +115,8 @@ const resetStock = () => {
         game.talon = [] 
     }
 }
+
+// move if to global
 
 const shuffle = (array) =>  {
     array.sort(() => Math.random()-0.5);
@@ -224,12 +227,12 @@ generateGame()
 // game.setTableaux(deck)
 
 document.getElementById("stock").addEventListener("click", function() {
-    resetStock()
     let drawnCard = game.stock.shift()
     drawnCard.flipped = true
     console.log(drawnCard)
     game.talon.cards.push(drawnCard)
     document.getElementById("talonImage").src = `images/${drawnCard.value}${drawnCard.suit}.png`
+    resetStock()
 })
 
 // Last item in array should be visible (true)
