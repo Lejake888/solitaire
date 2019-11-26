@@ -127,16 +127,20 @@ const generateGame = () => {
     let yIndex = 295;
     let zIndex = 0;
     for (let i = 0; i < 7; i++) {    
+        let list = document.createElement("Li");
         for (let j = 0; j < i+1; j++) {
+            let image = document.createElement("img");
             if (i != j) {
                 console.log("not turned")
-                document.getElementById(`tableau${i+1}Image`).src = `images/card_back.png`
-                document.getElementById("tableaux").style.yIndex = yIndex + 10;
-                document.getElementById("tableaux").style.zIndex = zIndex + 1;
+                image.src = `images/card_back.png`
+                list.appendChild(image);
+                document.getElementById("tableau").appendChild(list);
             }
             else {
                 console.log("turned")
-                document.getElementById(`tableau${i+1}Image`).src = `images/${game.tableaux[i].cards[j].value}${game.tableaux[i].cards[j].suit}.png`
+                image.src = `images/${game.tableaux[i].cards[j].value}${game.tableaux[i].cards[j].suit}.png`
+                list.appendChild(image);
+                document.getElementById("tableau").appendChild(list);
             }
         }
     }

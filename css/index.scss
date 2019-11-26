@@ -38,6 +38,13 @@ img {
     #mainArea {
         height: auto;
 
+        ul {
+            list-style: none;
+          
+            li {
+                margin: 0 0 -120px 0;
+        }
+        
         #tableaux {
             display: flex;
             justify-content: space-around;
@@ -51,4 +58,5 @@ img {
     img {
         padding: 5px;
     }
+}
 }
