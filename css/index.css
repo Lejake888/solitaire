@@ -46,15 +46,7 @@ img {
   height: auto;
 }
 
-.gameSpace #mainArea ul {
-  list-style: none;
-}
-
-.gameSpace #mainArea ul li {
-  margin: 0 0 -120px 0;
-}
-
-.gameSpace #mainArea ul #tableaux {
+.gameSpace #mainArea #tableaux {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,7 +56,40 @@ img {
   margin-right: 50px;
 }
 
-.gameSpace #mainArea img {
+.gameSpace #mainArea ul {
+  list-style: none;
+}
+
+.gameSpace #mainArea ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.gameSpace #mainArea ul li img {
+  margin-bottom: -120px;
+}
+
+.gameSpace #mainArea ul #tableaux {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.gameSpace img {
   padding: 5px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,5 +1,3 @@
-// card dimensions: 
-
 h1 {
     color: white;
     text-align: center;
@@ -38,13 +36,6 @@ img {
     #mainArea {
         height: auto;
 
-        ul {
-            list-style: none;
-          
-            li {
-                margin: 0 0 -120px 0;
-        }
-        
         #tableaux {
             display: flex;
             justify-content: space-around;
@@ -53,10 +44,32 @@ img {
 
             // justify-content: space-evenly;
         }
+        ul {
+            list-style: none;
+            // width: 100px;
+            
+            li {
+                display: flex;
+                float: left;
+                flex-direction: column;
+
+                img {
+                    margin-bottom: -120px;
+                }
+            }
+        
+        #tableaux {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        }
     }
 
     img {
         padding: 5px;
     }
 }
-}
+
