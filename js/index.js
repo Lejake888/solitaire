@@ -121,14 +121,29 @@ const shuffle = (array) =>  {
 }
 
 const generateGame = () => {
-    for (let i = 0; i < 7; i++) {
+    let yIndex = 295;
+    let zIndex = 0;
+    for (let i = 0; i < 7; i++) {    
         for (let j = 0; j < i+1; j++) {
-            if (game.tableaux[i].cards[j].flipped === "false") {
+            if (i != j) {
                 console.log("not turned")
+                document.getElementById(`tableau${i+1}Image`).src = `images/card_back.png`
+                document.getElementById("tableaux").style.yIndex = yIndex + 10;
+                document.getElementById("tableaux").style.zIndex = zIndex + 1;
+            }
+            else {
+                console.log("turned")
+                document.getElementById(`tableau${i+1}Image`).src = `images/${game.tableaux[i].cards[j].value}${game.tableaux[i].cards[j].suit}.png`
             }
         }
-        document.getElementById(`tableau${i+1}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
     }
+
+    // All top cards display with below code
+
+    // for (let i = 0; i < 7; i++) {
+    //     document.getElementById(`tableau${i+1}Image`).src = `images/${game.tableaux[i].cards[i].value}${game.tableaux[i].cards[i].suit}.png`
+    // }
+
     // let testDiv = document.getElementById("tableaux")
     // console.log(testDiv.offsetTop)
     // testDiv.offsetTop = testDiv.offsetTop + 1000;
@@ -191,11 +206,11 @@ let allCards = [
     new Card("D", "Q", "red"),
     new Card("D", "K", "red")
 ]
-// shuffles all the cards
 
 let deck = shuffle(allCards)
 let game = new Game(deck)
 game.setupTableaux()
+generateGame()
 
 // gets coordinate of mouse click
 
@@ -217,9 +232,6 @@ document.getElementById("stock").addEventListener("click", function() {
     document.getElementById("talonImage").src = `images/${drawnCard.value}${drawnCard.suit}.png`
 })
 
-window.onload = function() {
-    generateGame()
-  };     
-
-  // Last item in array should be visible (true)
-  // Others should be flipped over (false)
+// Last item in array should be visible (true)
+// Others should be flipped over (false)
+// Use appendChild
