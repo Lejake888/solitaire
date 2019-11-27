@@ -12,6 +12,7 @@ body {
 img { 
     width: 100px;
     height: 150px;
+    position: absolute;
 }
 
 .gameSpace {
@@ -46,6 +47,8 @@ img {
         }
         ul {
             list-style: none;
+            padding: 0px;
+          
             // width: 100px;
             
             li {
