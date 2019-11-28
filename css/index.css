@@ -11,9 +11,10 @@ img {
   width: 100px;
   height: 150px;
   position: relative;
+  cursor: pointer;
 }
 
-.gameSpace {
+#gameSpace {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,25 +30,25 @@ img {
   padding: 10px;
 }
 
-.gameSpace #topArea {
+#gameSpace #topArea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: auto;
 }
 
-.gameSpace #topArea #foundations {
+#gameSpace #topArea #foundations {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-left: auto;
 }
 
-.gameSpace #mainArea {
+#gameSpace #mainArea {
   height: auto;
 }
 
-.gameSpace #mainArea #tableaux {
+#gameSpace #mainArea #tableaux {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,12 +58,12 @@ img {
   margin-right: 50px;
 }
 
-.gameSpace #mainArea ul {
+#gameSpace #mainArea ul {
   list-style: none;
   padding: 0px;
 }
 
-.gameSpace #mainArea ul li {
+#gameSpace #mainArea ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,13 +72,14 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
-.gameSpace #mainArea ul li img {
+#gameSpace #mainArea ul li img {
   margin-bottom: -125px;
 }
 
-.gameSpace #mainArea ul #tableaux {
+#gameSpace #mainArea ul #tableaux {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,7 +93,7 @@ img {
   margin-right: 50px;
 }
 
-.gameSpace img {
+#gameSpace img {
   padding: 5px;
 }
 /*# sourceMappingURL=index.css.map */

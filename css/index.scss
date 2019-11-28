@@ -13,9 +13,10 @@ img {
     width: 100px;
     height: 150px;
     position: relative;
+    cursor: pointer;
 }
 
-.gameSpace {
+#gameSpace {
     display: flex;
     flex-direction: column;
     margin-left: auto;
@@ -55,6 +56,7 @@ img {
                 display: flex;
                 float: left;
                 flex-direction: column;
+                position: relative;
 
                 img {
                     margin-bottom: -125px;

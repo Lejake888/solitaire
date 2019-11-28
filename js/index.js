@@ -215,17 +215,6 @@ let game = new Game(deck)
 game.setupTableaux()
 generateGame()
 
-// gets coordinate of mouse click
-
-// coordinateCheck = () => {
-//     let x = event.clientX;
-//     let y = event.clientY;
-//     let coords = "X coords: " + x + ", Y coords: " + y;
-//     console.log(coords)
-// }
-
-// game.setTableaux(deck)
-
 document.getElementById("stock").addEventListener("click", function() {
     let drawnCard = game.stock.shift()
     drawnCard.flipped = true
@@ -235,39 +224,42 @@ document.getElementById("stock").addEventListener("click", function() {
     resetStock()
 })
 
-//////////// Works, but not really
+const grab = document.getElementById('gameSpace')
+const pilesForCards = document.querySelectorAll('.pile')
 
-const images = document.querySelectorAll("img")
-for (i = 0; i < images.length; i++) {
-    images[i].draggable = true;
+const dragStart = () => {
+    console.log("Start")
 }
 
-function allowDrop(ev) {
-    ev.preventDefault();
-    }
-    
-    function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-    }
-    
-    function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-    }
-//////////// Use coordinates, only dragstart worked
+const dragEnd = () => {
+    console.log("end")
+}
 
-// function onDragStart(event) {
-//     event.dataTransfer.setData('text/plain', event.target.id);
+const dragOver = (e) => {
+    e.preventDefault()
+}
 
-//     console.log(event)
-//     console.log(event.screenX)
-//     console.log(event.screenY)
-// }
+const dragEnter = (e) => {
+    e.preventDefault()
+}
 
-// function onDrop(event) {
 
-//     if ((event.screenX > 145 && event.screenX < 245) && (event.screenY > 390 && event.screenY < 540)) {
-//         console.log("hello")
-//     }
-// }
+const dragLeave = (e) => {
+    e.preventDefault()
+}
+
+
+const dragDrop = (e) => {
+    e.preventDefault()
+    this.append(`images/circle.png`)
+}
+
+grab.addEventListener('dragstart', dragStart);
+grab.addEventListener('dragend', dragEnd);
+
+for(piles of pilesForCards) {
+    piles.addEventListener('dragover', dragOver);
+    piles.addEventListener('dragenter', dragEnter);
+    piles.addEventListener('dragleave', dragLeave);
+    piles.addEventListener('drop', dragDrop);
+  }

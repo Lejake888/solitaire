@@ -7,34 +7,34 @@
 </head>
 <body>
     <h1>Solitaire</h1>
-    <div class = "gameSpace" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div class = "pile" id = "gameSpace">
             <!-- ondrop="drop(event)" ondragover="allowDrop(event)" -->
             <div id = "topArea">
-                <div id = "stock">
-                    <img draggable= true ondragstart="drag(event)" id = "stockImage" src = 'images/card_back.png'></img>
+                <div class = "pile" id = "stock" draggable="true">
+                    <img id = "stockImage" src = 'images/card_back.png'></img>
                 </div>
-                <div id = "talon" draggable="true" ondragstart="drag(event)">
+                <div class = "pile" id = "talon">
                     <img id = "talonImage" src = 'images/empty_card.png'></img>
                 </div>
-                <div id = "foundations" draggable="true">
-                    <div id = "foundation1">
+                <div id = "foundations">
+                    <div class = "pile" id = "foundation1">
                         <img id = "foundation1Image" src = 'images/empty_card.png'></img>
                     </div>
-                    <div id = "foundation2">
+                    <div class = "pile" id = "foundation2">
                         <img id = "foundation2Image" src = 'images/empty_card.png'></img>
                     </div>
-                    <div id = "foundation3">
+                    <div class = "pile" id = "foundation3">
                         <img id = "foundation3Image" src = 'images/empty_card.png'></img>
                     </div>
-                    <div id = "foundation4">
+                    <div class = "pile" id = "foundation4">
                         <img  id = "foundation4Image" src = 'images/empty_card.png'></img>
                     </div>
                 </div>
             </div>
         <div id = "mainArea">
             <div id = "tableaux">
-                <ul id = "tableau">
-                    <li draggable="true" ondragstart="drag(event)"></li>
+                <ul class = "pile" id = "tableau">
+                    <li></li>
                 </ul>
             </div>
         </div>
