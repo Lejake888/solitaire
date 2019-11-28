@@ -10,6 +10,7 @@ body {
 img {
   width: 100px;
   height: 150px;
+  position: relative;
 }
 
 .gameSpace {
@@ -58,6 +59,7 @@ img {
 
 .gameSpace #mainArea ul {
   list-style: none;
+  padding: 0px;
 }
 
 .gameSpace #mainArea ul li {

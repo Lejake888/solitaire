@@ -124,10 +124,8 @@ const shuffle = (array) =>  {
 }
 
 const generateGame = () => {
-    let yIndex = 295;
-    let zIndex = 0;
     for (let i = 0; i < 7; i++) {    
-        let list = document.createElement("Li");
+        let list = document.createElement("Li", id = "card");
         for (let j = 0; j < i+1; j++) {
             let image = document.createElement("img");
             if (i != j) {
@@ -156,8 +154,6 @@ const generateGame = () => {
     // testDiv.offsetTop = testDiv.offsetTop + 1000;
     // console.log(testDiv.offsetTop)
 }
-
-// Card generation
 
 let allCards = [
     new Card("S", "A", "black"),
@@ -239,52 +235,39 @@ document.getElementById("stock").addEventListener("click", function() {
     resetStock()
 })
 
-// Last item in array should be visible (true)
-// Others should be flipped over (false)
-// Use appendChild
+//////////// Works, but not really
 
-// Drag images
+const images = document.querySelectorAll("img")
+for (i = 0; i < images.length; i++) {
+    images[i].draggable = true;
+}
 
-// dragElement(document.querySelectorAll("img"));
+function allowDrop(ev) {
+    ev.preventDefault();
+    }
+    
+    function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+    }
+    
+    function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+    }
+//////////// Use coordinates, only dragstart worked
 
-// function dragElement(elmnt) {
-// elmnt.style.position = "absolute"
-//   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-//   if (document.querySelectorAll(elmnt.id + "header")) {
-//     // if present, the header is where you move the DIV from:
-//     document.querySelectorAll(elmnt.id + "header").onmousedown = dragMouseDown;
-//   } else {
-//     // otherwise, move the DIV from anywhere inside the DIV:
-//     elmnt.onmousedown = dragMouseDown;
-//   }
+// function onDragStart(event) {
+//     event.dataTransfer.setData('text/plain', event.target.id);
 
-//   function dragMouseDown(e) {
-//     e = e || window.event;
-//     e.preventDefault();
-//     // get the mouse cursor position at startup:
-//     pos3 = e.clientX;
-//     pos4 = e.clientY;
-//     document.onmouseup = closeDragElement;
-//     // call a function whenever the cursor moves:
-//     document.onmousemove = elementDrag;
-//   }
+//     console.log(event)
+//     console.log(event.screenX)
+//     console.log(event.screenY)
+// }
 
-//   function elementDrag(e) {
-//     e = e || window.event;
-//     e.preventDefault();
-//     // calculate the new cursor position:
-//     pos1 = pos3 - e.clientX;
-//     pos2 = pos4 - e.clientY;
-//     pos3 = e.clientX;
-//     pos4 = e.clientY;
-//     // set the element's new position:
-//     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-//     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-//   }
+// function onDrop(event) {
 
-//   function closeDragElement() {
-//     // stop moving when mouse button is released:
-//     document.onmouseup = null;
-//     document.onmousemove = null;
-//   }
+//     if ((event.screenX > 145 && event.screenX < 245) && (event.screenY > 390 && event.screenY < 540)) {
+//         console.log("hello")
+//     }
 // }
