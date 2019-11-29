@@ -237,21 +237,29 @@ const dragEnd = () => {
 
 const dragOver = (e) => {
     e.preventDefault()
+    console.log("over")
 }
 
 const dragEnter = (e) => {
     e.preventDefault()
+    console.log("entered")
 }
 
 
 const dragLeave = (e) => {
     e.preventDefault()
+    console.log("leave")
 }
 
 
 const dragDrop = (e) => {
     e.preventDefault()
-    this.append(`images/circle.png`)
+    console.log(e)
+    console.log("dropped")
+    if ((e.screenX > 145 && e.screenX < 245) && (e.screenY > 390 && e.screenY < 540)) {
+        let tableau = document.getElementById("tableau1")
+        tableau.append(e)
+    }
 }
 
 grab.addEventListener('dragstart', dragStart);
@@ -259,7 +267,7 @@ grab.addEventListener('dragend', dragEnd);
 
 for(piles of pilesForCards) {
     piles.addEventListener('dragover', dragOver);
-    piles.addEventListener('dragenter', dragEnter);
-    piles.addEventListener('dragleave', dragLeave);
+    // piles.addEventListener('dragenter', dragEnter);
+    // piles.addEventListener('dragleave', dragLeave);
     piles.addEventListener('drop', dragDrop);
   }
