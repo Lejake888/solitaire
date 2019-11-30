@@ -131,15 +131,14 @@ const generateGame = () => {
             if (i != j) {
                 console.log("not turned")
                 image.src = `images/card_back.png`
-                list.appendChild(image);
-                document.getElementById("tableau").appendChild(list);
             }
             else {
                 console.log("turned")
-                image.src = `images/${game.tableaux[i].cards[j].value}${game.tableaux[i].cards[j].suit}.png`
-                list.appendChild(image);
-                document.getElementById("tableau").appendChild(list);
+                image.src = `images/${game.tableaux[i].cards[j].value}${game.tableaux[i].cards[j].suit}.png`;
             }
+            list.appendChild(image);
+            list.id = "image"
+            document.getElementById("tableau").appendChild(list);
         }
     }
 
@@ -224,7 +223,7 @@ document.getElementById("stock").addEventListener("click", function() {
     resetStock()
 })
 
-const grab = document.getElementById('gameSpace')
+const grab = document.getElementById('image')
 const pilesForCards = document.querySelectorAll('.pile')
 
 const dragStart = () => {
@@ -260,7 +259,7 @@ const dragDrop = (e) => {
     if ((current.screenX > 145 && current.screenX < 245) && (current.screenY > 390 && current.screenY < 540)) {
         console.log("inside if statement")
         let tableau = document.getElementById("tableau1")
-        tableau.append(current) // DOM not created yet, setTimeout
+        tableau.appendChild(current) // DOM not created yet, setTimeout
     }
 }
 
