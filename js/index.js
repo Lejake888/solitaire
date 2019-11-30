@@ -254,11 +254,13 @@ const dragLeave = (e) => {
 
 const dragDrop = (e) => {
     e.preventDefault()
-    console.log(e)
+    let current = e
+    console.log(current)
     console.log("dropped")
-    if ((e.screenX > 145 && e.screenX < 245) && (e.screenY > 390 && e.screenY < 540)) {
+    if ((current.screenX > 145 && current.screenX < 245) && (current.screenY > 390 && current.screenY < 540)) {
+        console.log("inside if statement")
         let tableau = document.getElementById("tableau1")
-        tableau.append(e)
+        tableau.append(current) // DOM not created yet, setTimeout
     }
 }
 
