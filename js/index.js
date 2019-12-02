@@ -125,9 +125,10 @@ const shuffle = (array) =>  {
 
 const generateGame = () => {
     for (let i = 0; i < 7; i++) {    
-        let list = document.createElement("Li", id = "card");
+        let list = document.createElement("Li");
         for (let j = 0; j < i+1; j++) {
             let image = document.createElement("img");
+            image.className = "cardImage"
             if (i != j) {
                 console.log("not turned")
                 image.src = `images/card_back.png`
@@ -226,8 +227,10 @@ document.getElementById("stock").addEventListener("click", function() {
 const grab = document.getElementById('image')
 const pilesForCards = document.querySelectorAll('.pile')
 
-const dragStart = () => {
+const dragStart = (e) => {
     console.log("Start")
+    let current = e.target
+    console.log(current)
 }
 
 const dragEnd = () => {
@@ -253,13 +256,14 @@ const dragLeave = (e) => {
 
 const dragDrop = (e) => {
     e.preventDefault()
-    let current = e
-    console.log(current)
     console.log("dropped")
-    if ((current.screenX > 145 && current.screenX < 245) && (current.screenY > 390 && current.screenY < 540)) {
+    if ((e.screenX > 145 && e.screenX < 245) && (e.screenY > 390 && e.screenY < 540)) {
         console.log("inside if statement")
-        let tableau = document.getElementById("tableau1")
-        tableau.appendChild(current) // DOM not created yet, setTimeout
+        // for (let i=0; i <7; i++) { // Loop through tableaux?
+        //     let tableau = []
+        //     tableau.push(document.getElementById(`tableau${i+1}`))
+        //     tableau.appendChild(current[i]) // DOM not created yet, setTimeout
+        // }
     }
 }
 
